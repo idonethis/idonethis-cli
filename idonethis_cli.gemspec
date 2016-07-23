@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'idonethis_cli/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "idonethis-cli"
+  spec.name          = "idonethis-official-cli"
   spec.version       = IdonethisCli::VERSION
   spec.authors       = ["Shane Mingins"]
   spec.email         = ["shane@idonethis.com"]
