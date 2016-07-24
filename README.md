@@ -10,12 +10,12 @@ Install it yourself as:
 
 ## Usage
 
-idt help
-idt authorize
-idt team list
-idt team set
-idt entry new "Just setup the IDoneThis CLI"
-idt entry list
+    $ idt help
+    $ idt authorize
+    $ idt team list
+    $ idt team set
+    $ idt entry new "Just setup the IDoneThis CLI"
+    $ idt entry list
 
 ## Development
 
