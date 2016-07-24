@@ -1,34 +1,21 @@
-TODO: Fill this out!
+# Official IDoneThis Command Line Interface
 
-# IdonethisCli
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/idonethis_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The I Done This Command Line Interface for [IDoneThis](https://beta.idonethis.com)
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install it yourself as:
 
-```ruby
-gem 'idonethis_cli'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install idonethis_cli
+    $ gem install idonethis-official-cli
 
 ## Usage
 
 idt help
 idt authorize
+idt team list
 idt team set
-idt entry new Just setup the iDT CLI
-idt entries
+idt entry new "Just setup the IDoneThis CLI"
+idt entry list
 
 ## Development
 
@@ -41,11 +28,9 @@ You'll want to see:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/idonethis_cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/idonethis/idonethis-cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-# idonethis-cli
