@@ -1,6 +1,6 @@
-# Official IDoneThis Command Line Interface
+# I Done This CLI
 
-The I Done This Command Line Interface for [IDoneThis](https://beta.idonethis.com)
+A command line interface for [I Done This](https://home.idonethis.com)
 
 ## Installation
 
