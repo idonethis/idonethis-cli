@@ -31,19 +31,19 @@ module IdonethisCli
     def list
       return nil unless authenticated?
       return nil unless team_set?
-      # {"body"=>"Here it is", "created_at"=>"2016-07-22T07:17:12.688Z", "updated_at"=>"2016-07-22T07:17:12.688Z", "occurred_on"=>"2016-07-22", "status"=>"done", "hash_id"=>"b074cb2ff", "completed_on"=>nil, "archived_at"=>nil, "team"=>{"name"=>"Team Name", "hash_id"=>"6fbb"}, "user"=>{"email_address"=>"user@domain.com", "full_name"=>"Jonathan Siegel", "hash_id"=>"3e35"}}
-      entries.each.with_index(1) do |entry, idx|
-        cli.say "#{entry['created_at']} : #{entry['status']} : #{entry['body']}"
+
+      if entries = entry_client.list(settings.team['hash_id'])
+        entries.each.with_index(1) do |entry, idx|
+          cli.say "#{entry['created_at']} : #{entry['status']} : #{entry['body']}"
+        end
+      else
+        cli.say "Could not retrieve entries.  #{entry_client.error}"
       end
     end
 
     private
     def entry_client
       @client ||= IdonethisCli::Client::Entry.new(token)
-    end
-
-    def entries
-      entry_client.list(settings.team['hash_id'])
     end
 
     def post_entry(body)

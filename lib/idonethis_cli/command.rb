@@ -1,5 +1,6 @@
 require 'thor'
 require "idonethis_cli/settings"
+require "idonethis_cli/client/auth"
 require 'highline'
 
 module IdonethisCli
@@ -15,14 +16,15 @@ module IdonethisCli
       @settings ||= Settings.new
     end
 
-    # Oauth2 Client
-    def oauth2_client 
-      OAuth2::Client.new(CLIENT_ID, CLIENT_SECRET, site: BASE_URL)
+    def auth_client
+      @auth_client ||= IdonethisCli::Client::Auth.new
     end
 
     # This token is used to access things
     def token
-      OAuth2::AccessToken.from_hash(oauth2_client, settings.oauth2_token)
+      auth_client.token(settings.oauth2_token).tap do |token|
+        settings.save_oauth2_token(token.to_hash)
+      end
     end
 
     def authenticated?
