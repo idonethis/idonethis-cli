@@ -40,7 +40,7 @@ module IdonethisCli
       if settings.team
         true
       else
-        cli.say("You have not set a team. Please run 'idt team_set'")
+        cli.say("You have not set a team. Please run 'idt team set'")
         false
       end
     end
