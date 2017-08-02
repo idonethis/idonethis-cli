@@ -16,6 +16,7 @@ Install it yourself as:
     $ idt team set
     $ idt entry new "Just setup the IDoneThis CLI"
     $ idt entry list
+    $ idt entry goal "Use the IDoneThis CLI once more today"
 
 ## Development
 

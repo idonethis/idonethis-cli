@@ -10,6 +10,14 @@ module IdonethisCli
       post_entry body
     end
 
+    desc "goal BODY", "enter a single goal entry"
+    long_desc "create a goal entry for your set team"
+    def goal(body)
+      return nil unless authenticated?
+      return nil unless team_set?
+      post_entry(body, 'goal')
+    end
+
     desc "prompt", "enter multiple entries"
     long_desc "prompts for your entries"
     def prompt
@@ -46,8 +54,12 @@ module IdonethisCli
       @client ||= IdonethisCli::Client::Entry.new(token)
     end
 
-    def post_entry(body)
-      response = entry_client.create(settings.team['hash_id'], body)
+    def post_entry(body, type='done')
+      if type == 'goal'
+        response = entry_client.create_goal(settings.team['hash_id'], body)
+      else
+        response = entry_client.create(settings.team['hash_id'], body)
+      end
       if response
         cli.say "Entry created for #{response['user']['full_name']} on #{settings.team['name']}"
       else
