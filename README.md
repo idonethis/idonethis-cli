@@ -1,3 +1,5 @@
+##### NOTICE----- I Done This CLI is DEPRECATED and is not being maitained any more. If you have any integration requirements, please contact us directly through our support contact at our website www.idonethis.com #####
+
 # I Done This CLI
 
 A command line interface for [I Done This](https://home.idonethis.com)
